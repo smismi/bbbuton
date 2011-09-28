@@ -151,8 +151,7 @@
 
         //        $(obj).css('width', width);
 
-        var button = obj;
-
+        var button = obj; 
         $(button).css({position:'absolute', left : 150, top: 45, 'z-index': 0})
                 .wrap('<div>' + $(button).attr('value') + '</div>')
                 .bind({                     
@@ -166,7 +165,8 @@
                     }
                 })
                 .unbind("click")
-                .parent().css({display:"inline", position: 'relative'}).addClass("teplovizor")/*.append("<ul><li class='err'>1</li><li class='err2'>2</li><li class='err3'>3</li></ul>")*/
+                .parent()
+                .css({display:"inline", position: 'relative'}).addClass("btn " + $(button).attr('class'))/*.append("<ul><li class='err'>1</li><li class='err2'>2</li><li class='err3'>3</li></ul>")*/
                 .bind({
                     "mouseenter" : function() {
                         console.log('mouseenter');
