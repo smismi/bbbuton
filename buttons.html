@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>—Agrrrh! Кнопке!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="styles/reset.css" rel="stylesheet" type="text/css"/> 
+        <script type="text/javascript" src="scripts/jquery-1.5.2.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.buttons.js"></script>
+    </head>
+    <body>
+        <style>                        
+            .teplovizor {
+                background: -moz-linear-gradient(center top , #FFFFFF, #EFEFEF) repeat scroll 0 0 #F6F6F6;
+                border: 1px solid #CCCCCC;
+                border-radius: 3px 3px 3px 3px;
+                color: #000000;
+                cursor: pointer;
+                height: 2.0833em;
+                overflow: visible;
+                padding: 0 0.5em;
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+            .btn_focused {
+                border: 1px outset #ff9900;
+            }
+            .btn_hoverd  {
+                background: #cad1da;
+            }
+            .btn_mousedownd  {
+                background: #b9c2cd;
+                border: 1px inset #666666;
+
+            }
+            .btn_clickd  {
+                background: #a7bad1;
+                border: 1px inset #b9c2cd;
+
+            }
+        </style>
+
+        <form class="" style="" action="?id=1">
+            <textarea rows="3" cols="52"></textarea>
+            <input type="button" class="butt" value="клик ми инпут батон" id="btn1" onclick="addAnother(this)">
+            <input type="submit" class="butt" value="клик ми инпут сабмит" id="btn2" onclick="addAnother(this)">
+            <button value="клик ми батон батон"  class="butt" id="btn3" onclick="alert('хуй')">клик ми батон батон</button>
+             <input type="checkbox" value="клик ми" class="checkbox1" id="checkbox1" >
+
+        </form>
+
+
+
+        <script>
+            $(document).ready(function(){
+//                $("#btn1").click(function(){
+//                    alert('1');
+//                });
+            });
+            function addAnother(obj) {
+                $('body').append("<br>нажал кнопку " + $(obj).attr('value') + " ");
+            };
+
+            $("#checkbox1").chk({
+                checked: "url(images/all_.png) -36px -20px",
+                unchecked: "url(images/all_.png) -56px -20px",
+                width: 20,
+                height: 20
+            });
+            $(".butt").btn({
+            /*    checked: "url(images/all_.png) -36px -20px",
+                unchecked: "url(images/all_.png) -56px -20px",
+                width: 20,
+                height: 20 */
+            });
+        </script>
+    </body>
+</html>
