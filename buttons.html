@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>—Agrrrh! Кнопке!</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link href="styles/reset.css" rel="stylesheet" type="text/css"/> 
-        <script type="text/javascript" src="scripts/jquery-1.5.2.min.js"></script>
-        <script type="text/javascript" src="scripts/jquery.buttons.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+        <!--<script type="text/javascript" src="scripts/jquery-1.5.2.min.js"></script>-->
+        <!--<script type="text/javascript" src="scripts/jquery.buttons.js"></script>-->
+        <script type="text/javascript" src="scripts/buttons.js"></script>
     </head>
     <body>
         <style>
@@ -121,38 +121,40 @@
 
         </style>
 
-        <form class="" style="" action="?id=1">
+        <form class="btnForm" style="" action="?id=1">
             <textarea rows="3" cols="52"></textarea>
-            <input type="button" class="butt btn_blue" value="клик ми инпут батон" id="btn1" onclick="addAnother(this)">
-            <input type="submit" class="butt" value="клик ми инпут сабмит" id="btn2" onclick="addAnother(this)">
-            <button value="клик ми батон батон"  class="butt btn_green" id="btn3" onclick="alert('хуй')">клик ми батон батон</button>
+            <input type="button" class="btn_blue" value="клик ми инпут батон" id="btn1" onclick="addAnother(this)">
+            <input type="submit"  value="клик ми инпут сабмит" id="btn2" onclick="addAnother(this)">
+            <button value="клик ми батон батон"  class="btn_green" id="btn3" onclick="alert('хуй')">клик ми батон батон</button>
             <input type="checkbox" value="клик ми" class="checkbox1" id="checkbox1" >
         </form>
 
 
 
         <script>
-            $(document).ready(function(){
-//                $("#btn1").click(function(){
-//                    alert('1');
-//                });
-            });
-            function addAnother(obj) {
-                $('body').append("<br>нажал кнопку " + $(obj).attr('value') + " ");
-            };
-
-            $("#checkbox1").chk({
-                checked: "url(images/all_.png) -36px -20px",
-                unchecked: "url(images/all_.png) -56px -20px",
-                width: 20,
-                height: 20
-            });
-            $(".butt").btn({
-            /*    checked: "url(images/all_.png) -36px -20px",
-                unchecked: "url(images/all_.png) -56px -20px",
-                width: 20,
-                height: 20 */
-            });
+            // if JQUERY
+//            $(document).ready(function(){
+////                $("#btn1").click(function(){
+////                    alert('1');
+////                });
+//            });
+//            function addAnother(obj) {
+//                $('body').append("<br>нажал кнопку " + $(obj).attr('value') + " ");
+//            };
+//
+//            $("#checkbox1").chk({
+//                checked: "url(images/all_.png) -36px -20px",
+//                unchecked: "url(images/all_.png) -56px -20px",
+//                width: 20,
+//                height: 20
+//            });
+//            $(".butt").btn({
+//            /*    checked: "url(images/all_.png) -36px -20px",
+//                unchecked: "url(images/all_.png) -56px -20px",
+//                width: 20,
+//                height: 20 */
+//            });
+btnInit()
         </script>
     </body>
 </html>
