@@ -128,7 +128,7 @@
             <button value="клик ми батон батон"  class="btn_green" id="btn3" onclick="alert('хуй')">клик ми батон батон</button>
             <input type="checkbox" value="клик ми" class="checkbox1" id="checkbox1" >
         </form>
-
+<div id="ins"></div>
 
 
         <script>
@@ -138,9 +138,13 @@
 ////                    alert('1');
 ////                });
 //            });
-//            function addAnother(obj) {
-//                $('body').append("<br>нажал кнопку " + $(obj).attr('value') + " ");
-//            };
+            function addAnother(obj) { 
+                var newnode = document.createTextNode(obj.value);
+                var node = document.createElement('div');
+                node.appendChild(newnode);
+                document.body.appendChild(node);
+ 
+            };
 //
 //            $("#checkbox1").chk({
 //                checked: "url(images/all_.png) -36px -20px",

@@ -23,7 +23,7 @@ function btnInit() {
 		document.execCommand('BackgroundImageCache', false, true);
 	} catch(e) {}
 	if(!document.getElementById) {return false;}
-	alert("click me first");
+	//alert("click me first");
 	doBtn('start');
 }
 
@@ -77,22 +77,8 @@ function btnForm(src) {
 	}
 }
 function inputSubmit(el) { //extend Buttons
- 
-
-
-
-
 	el.oldClassName = el.className;
-    console.log(el.className)
-//    el.suffix = el.oldClassName ? "_" + el.oldClassName : "";
-//    el.dis = el.disabled ? " NFdis" : "";
-//	el.left = document.createElement('img');
-//	el.left.className = "NFButtonLeft" + el.suffix + el.dis;
-//	el.left.src = imagesPath + "0.png";
-//	el.right = document.createElement('img');
-//	el.right.src = imagesPath + "0.png";
-//	el.right.className = "NFButtonRight" + el.suffix  + el.dis;
-
+    //console.log(el.className)
     el.wraper = document.createElement('div');
     el.wraper.appendChild(document.createTextNode(el.value)); 
     el.wraper.className = "btn " + el.oldClassName;
@@ -108,35 +94,21 @@ function inputSubmit(el) { //extend Buttons
 
 	el.wraper.onmouseover = function() {
         this.className = el.classes.hovered;
-//		this.className = "NFButton" + el.suffix + " NFh";
-//		this.left.className = "NFButtonLeft" + el.suffix + " NFh";
-//		this.right.className = "NFButtonRight" + el.suffix + " NFh";
-	}
+    }
 	el.wraper.onmouseout = function() {
         this.className = el.classes.def;
-//		this.className = "NFButton" + el.suffix;
-//		this.left.className = "NFButtonLeft" + el.suffix;
-//		this.right.className = "NFButtonRight" + el.suffix;
 	}
 	el.wraper.onmousedown = function() {
         this.className = el.classes.down;
-//		this.className = "NFButton" + el.suffix;
-//		this.left.className = "NFButtonLeft" + el.suffix;
-//		this.right.className = "NFButtonRight" + el.suffix;
 	}
 	el.wraper.onmouseup = function() {
         this.className = el.classes.click;
-//		this.className = "NFButton" + el.suffix;
-//		this.left.className = "NFButtonLeft" + el.suffix;
-//		this.right.className = "NFButtonRight" + el.suffix;
 	}
 	el.wraper.onclick = function() {
         this.className = el.classes.hovered;
-//		this.className = "NFButton" + el.suffix;
-//		this.left.className = "NFButtonLeft" + el.suffix;
-//		this.right.className = "NFButtonRight" + el.suffix;
-        var ecce = document.getElementById("btn1");
-                ecce.click();
+        (this.getElementsByTagName('input')[0]) ? this.getElementsByTagName('input')[0].click() : (this.getElementsByTagName('button')[0]) ? this.getElementsByTagName('button')[0].click() : '';
+
+          
 	}
     el.onfocus = function() {
         this.wraper.className = el.classes.focus;
