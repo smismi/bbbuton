@@ -1,164 +1,47 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>—Agrrrh! Кнопке!</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-        <!--<script type="text/javascript" src="scripts/jquery-1.5.2.min.js"></script>-->
-        <!--<script type="text/javascript" src="scripts/jquery.buttons.js"></script>-->
-        <script type="text/javascript" src="scripts/buttons.js"></script>
-    </head>
-    <body>
-        <style>
+<head>
+    <title>Button</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--<script type="text/javascript" src="scripts/jquery-1.5.2.min.js"></script>-->
+    <!--<script type="text/javascript" src="scripts/jquery.buttons.js"></script>-->
+    <script type="text/javascript" src="scripts/buttons.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="mainframe">
+    <form class="btnForm">
+        <textarea rows="3" cols="97"></textarea>
+        <input type="button" class="btn_blue" value="Синяя кнопка" id="btn1" onclick="addAnother(this)">
+        <input type="submit" value="Обычная кнопка" id="btn2" onclick="addAnother(this)">
+        <button value="button" class="btn_green" id="btn3" onclick="alert('button fired!')">Зеленая кнопка Button</button>
+        <input type="checkbox" value="клик ми" class="checkbox1" id="checkbox1">
+    </form>
+    <div id="log"></div>
+</div>
+<!--<script type="text/javascript">-->
+    <!--$(document).ready(function(){-->
+<!--//                $("#btn1").click(function(){-->
+<!--//                    alert('1');-->
+<!--//                });-->
+    <!--});-->
+    <!--function addAnother(obj) {-->
+        <!--$('body').append("<br>нажал кнопку " + $(obj).attr('value') + " ");-->
+    <!--};-->
 
+    <!--$("#checkbox1").chk({-->
+        <!--checked: "url(images/all_.png) -36px -20px",-->
+        <!--unchecked: "url(images/all_.png) -56px -20px",-->
+        <!--width: 20,-->
+        <!--height: 20-->
+    <!--});-->
+    <!--$(".butt").btn({-->
+        <!--/*    checked: "url(images/all_.png) -36px -20px",-->
+         <!--unchecked: "url(images/all_.png) -56px -20px",-->
+         <!--width: 20,-->
+         <!--height: 20 */-->
+    <!--});-->
+<!--</script>-->
 
-            .btn {
-                background-color: #e6e6e6;
-                color: #FFFFFF;
-                font-family: helvetica, arial, freesans, clean, sans-serif;
-                font-size: 1em;
-                border-radius: 4px;
-                cursor: pointer;
-                padding: 4px 13px;
-                position: relative;
-                white-space: nowrap;
-                border: 1px solid #cccccc;
-                font-weight: bold;
-
-                text-shadow: 1px 1px 0 #aaa;
-            }
-
-
-            .btn_focused {
-                border: 1px solid #ff9900;
-            }
-
-            .btn_hoverd {
-                background: #cccccc;
-            }
-
-            .btn_mousedownd {
-                background: #b3b3b3;
-                border-style: inset;
-                text-shadow: 0px -1px 0 #999999; 
-            }
-
-            .btn_clickd {
-                background: #c2c2c2;
-                border-style: inset;
-                text-shadow: 0px -1px 0 #999999;
-
-            }
-
-
-            .btn_blue {
-                background: #398ADC;
-                border-color: #0d60b4;
-                border-left-color: #3295fa;
-                border-top-color: #3295fa;
-                color: #fff;
-                text-shadow: 1px 1px 0 #0d60b4;
-            }
-
-            .btn_blue.btn_focused {
-                border: 1px solid #ff9900;
-            }
-
-            .btn_blue.btn_hoverd {
-                background: #2890fa; /*border: 1px inset #666666;*/
-            }
-
-            .btn_blue.btn_mousedownd {
-                background: #3295fa;
-                border-color: #0d60b4;
-                border-right-color: #3295fa;
-                border-bottom-color: #3295fa;
-                text-shadow: 0px -1px 0 #0d60b4;
-            }
-
-            .btn_blue.btn_clickd {
-                background: #f00;
-                border-color: #0d60b4;
-                border-right-color: #3295fa;
-                border-bottom-color: #3295fa;
-                text-shadow: 0px -1px 0 #0d60b4;
-
-            }
-
-            .btn_green {
-                background: #87B226;
-                border-color: #70941f;
-                border-left-color: #7dab15;
-                border-top-color: #7dab15;
-                color: #fff;
-                text-shadow: 1px 1px 0 #4d6d03;
-            }
-
-            .btn_green.btn_focused {
-                border: 1px solid #ff9900;
-            }
-
-            .btn_green.btn_hoverd {
-                background: #749920; /*border: 1px inset #666666;*/
-            }
-
-            .btn_green.btn_mousedownd {
-                background: #6b8c1d;
-                border-color: #70941f;
-                border-right-color: #7dab15;
-                border-bottom-color: #7dab15;
-                text-shadow: 0px -1px 0 #4d6d03;
-            }
-
-            .btn_green.btn_clickd {
-                background: #f00;
-                border-color: #70941f;
-                border-right-color: #7dab15;
-                border-bottom-color: #7dab15;
-                text-shadow: 0px -1px 0 #4d6d03;
-
-            }
-
-
-        </style>
-
-        <form class="btnForm" style="" action="?id=1">
-            <textarea rows="3" cols="52"></textarea>
-            <input type="button" class="btn_blue" value="клик ми инпут батон" id="btn1" onclick="addAnother(this)">
-            <input type="submit"  value="клик ми инпут сабмит" id="btn2" onclick="addAnother(this)">
-            <button value="клик ми батон батон"  class="btn_green" id="btn3" onclick="alert('хуй')">клик ми батон батон</button>
-            <input type="checkbox" value="клик ми" class="checkbox1" id="checkbox1" >
-        </form>
-<div id="ins"></div>
-
-
-        <script>
-            // if JQUERY
-//            $(document).ready(function(){
-////                $("#btn1").click(function(){
-////                    alert('1');
-////                });
-//            });
-            function addAnother(obj) { 
-                var newnode = document.createTextNode(obj.value);
-                var node = document.createElement('div');
-                node.appendChild(newnode);
-                document.body.appendChild(node);
- 
-            };
-//
-//            $("#checkbox1").chk({
-//                checked: "url(images/all_.png) -36px -20px",
-//                unchecked: "url(images/all_.png) -56px -20px",
-//                width: 20,
-//                height: 20
-//            });
-//            $(".butt").btn({
-//            /*    checked: "url(images/all_.png) -36px -20px",
-//                unchecked: "url(images/all_.png) -56px -20px",
-//                width: 20,
-//                height: 20 */
-//            });
-btnInit()
-        </script>
-    </body>
+</body>
 </html>

@@ -1,29 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-//Theme Variables - edit these to match your theme
-var a = "";
-
 //Global Variables
 var arrayBtn = new Array();
 var isIE = false;
-var resizeTest = 1;
 
 //Initialization function
 function btnInit() {
-	try {
-		document.execCommand('BackgroundImageCache', false, true);
-	} catch(e) {}
-	if(!document.getElementById) {return false;}
-	//alert("click me first");
 	doBtn('start');
 }
 
@@ -54,7 +34,6 @@ function btnForm(src) {
     //Start
 
 	src.start = function() {
-		//Separate and assign elements
 		var allInputs = this.getElementsByTagName('input');
 		for(var w = 0; w < allInputs.length; w++) {
 			switch(allInputs[w].type) {
@@ -82,7 +61,7 @@ function inputSubmit(el) { //extend Buttons
     el.wraper = document.createElement('div');
     el.wraper.appendChild(document.createTextNode(el.value)); 
     el.wraper.className = "btn " + el.oldClassName;
-//
+
     el.classes = {
         hovered: "btn " + "btn_hoverd " + el.oldClassName,
         def: "btn " + el.oldClassName,
@@ -131,4 +110,15 @@ function inputSubmit(el) { //extend Buttons
 //		this.parentNode.removeChild(this.right);
 //		this.className = this.oldClassName;
 	}
+    el.className = "original_button";
+}
+
+
+
+function addAnother(obj) {
+    var newnode = document.createTextNode(obj.value);
+    var node = document.createElement('div');
+    node.appendChild(newnode);
+    document.getElementById("log").appendChild(node);
+
 }
